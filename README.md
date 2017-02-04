@@ -1,10 +1,10 @@
 # zAngular2-webpack
-使用webpack2，包含aot、lazyload   
+使用webpack2，包含aot、lazyload  hmr 
 
 ## 用法
 > `npm install`   
 
-> #### 开发环境---（por：8666）
+> #### 开发环境---（port：8666）
 > `npm start`  
 
 > #### aot、发布环境  ---- aot编译 (port:8667)
