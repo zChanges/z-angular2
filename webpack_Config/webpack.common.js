@@ -44,6 +44,12 @@ module.exports = {
         //??fallbackLoader和loader的区别
         { test:/\.css$/, exclude:[helpers.root('src','app')], loaders:ExtractTextPlugin.extract({fallbackLoader:'style-loader',loader:'css-loader'})},
         { test:/\.css$/, include:[helpers.root('src','app')], loader:'to-string-loader!css-loader'},
+        //处理bootstrap
+        { test: /\.(woff|woff2)$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+        { test: /\.ttf$/,  loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+        { test: /\.eot$/,  loader: "file-loader" },
+        { test: /\.svg$/,  loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
+        
         { test:/favicon.ico$/, loader: 'file-loader?name=[name].[ext]' }
       ]
     },
@@ -73,14 +79,14 @@ module.exports = {
             title: 'webpack-angular',
             template: 'src/index.html',
             inject:'body'//把js资源加载在body之后
-        })
+        }),
 
         //如果想引入jq，使用此代码
-        // new webpack.ProvidePlugin({
-        //     $: "jquery",
-        //     jQuery: "jquery",
-        //     "window.jQuery": "jquery"
-        // })
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
     ]
 
 
