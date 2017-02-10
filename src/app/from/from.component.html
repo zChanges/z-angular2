@@ -1,0 +1,41 @@
+<!--
+    表单验证：
+         #userName="ngModel" -----把userName指向ngModel
+         ngModel指令可跟踪状态 用angularClass更新控件，反应当前状态，用ngModel.valid 和 pristine来显示隐藏消息
+         控件已经被访问过     --  ng-touched(真)   ng-untouched(假)
+         控件值已经变化       --  ng-dirty(真)     ng-pristine(假)
+         控件值是有效的       --  ng-valid(真)     ng-invalid(假)
+-->
+<div class="bs-example" data-example-id="simple-horizontal-form">
+    <form class="form-horizontal" #myForm="ngForm">
+        <div class="form-group">
+            <label class="col-sm-1 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" #userName="ngModel" required name="userName"class="form-control" [(ngModel)]="from.userName"  placeholder="填写用户名">
+                <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">这是必填字段</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-sm-1 control-label">密码</label>
+            <div class="col-sm-10">
+                <input type="password" required #password="ngModel" class="form-control" [(ngModel)]="from.passWord" name="password"  placeholder="Password">
+                <div [hidden]="password.valid || password.pristine" class="alert alert-danger">这是必填字段</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-sm-1 control-label">用户类别</label>
+            <div class="col-sm-10">
+                <select class="form-control" required [(ngModel)]="from.userType" name="userType">
+                    <option value="">全部</option>
+                    <option *ngFor="let type of userTypeList" [value]="type.id">{{type.type}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" (click)="submitFrom()" [disabled]="!myForm.valid" class="btn btn-default">提交</button>
+            </div>
+        </div>
+    </form>
+</div>

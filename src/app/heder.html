@@ -25,23 +25,30 @@
                 </a>
             </li>            
             <li>
-                <a data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="icon-group"></i>
-                    <span>用户</span>
-                    <i class="icon-chevron-down"></i>
-                    <ul class="submenu well" class="collapse" id="collapseExample">
-                        <li><a routerLink='/from' routerLinkActive="active">表单</a></li>
-                        <li><a routerLink='/table' routerLinkActive="active">列表</a></li>
-                        <li><a>用户资料</a></li>
+                <a>
+                <div id="zFrom" data-toggle="collapse" data-target="#zFromChlid" role="tab" >
+                    <span class="panel-title">
+                        分组
+                        <!--<span class="glyphicon glyphicon-chevron-up right"></span>-->
+                    </span>
+                </div>
+                <div id="zFromChlid" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="zFrom">
+                    <ul>
+                        <li class="list-unstyled"><a routerLink='/from' routerLinkActive="active">表单</a></li>
+                        <li class="list-unstyled"><a routerLink='/table' routerLinkActive="active">列表</a></li>
                     </ul>
+                </div>
                 </a>
             </li>
         </ul>
         
     </div>
-    <!--标记一个位置，用于加载当前激活路由的组件-->
-    <router-outlet></router-outlet>
-    <!-- end sidebar -->
+    <div class="content">
+        <!--标记一个位置，用于加载当前激活路由的组件-->
+        <router-outlet></router-outlet>
+        <!-- end sidebar -->
+    </div>
+
 
 
 

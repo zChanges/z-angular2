@@ -7,7 +7,7 @@ import { tableComponent }   from './table/table.component';
 const routes:Routes = [
     {
     path: '',
-    redirectTo: '/index',
+    redirectTo: 'index',
     pathMatch: 'full'
   },
   {

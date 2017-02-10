@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Microsoft yahei","Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: #f7f7f7;
   position: relative;
   margin: 0px;
@@ -186,4 +186,82 @@ body.menu #sidebar-nav {
 #sidebar-nav #dashboard-menu ul.submenu a.active {
   font-weight: bold;
   text-shadow: none;
+}
+
+.content {
+  min-width: 400px;
+  min-height: 620px;
+  margin-bottom: 100px;
+  padding: 20px 20px 50px 20px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  margin-left: 177px;
+  border-left: 1px solid #dae3e9;
+  border-bottom: 1px solid #dae3e9;
+  box-shadow: -3px 3px 3px -2px #f1f1f3;
+  border-radius: 0px 0px 0px 5px;
+  -webkit-transition: margin-left .3s ease;
+  -moz-transition: margin-left .3s ease;
+  -o-transition: margin-left .3s ease;
+  -ms-transition: margin-left .3s ease;
+  transition: margin-left .3s ease;
+  /* starts skins changer */
+  /* end skin changer*/
+}
+
+@media (max-width: 768px) {
+  .content {
+    min-width: 0px;
+    margin: 0;
+  }
+  #dashboard-menu .pointer {
+    display: none;
+  }
+  #sidebar-nav {
+    left: -200px;
+    position: fixed;
+    z-index: 9999;
+    background-color: #f7f7f7;
+    padding-top: 0px;
+    border-right: 1px solid #ccc;
+    width: 165px;
+    box-shadow: 1px 1px 4px 1px #e9e9e9;
+    -webkit-transition: left .3s ease;
+    -moz-transition: left .3s ease;
+    -o-transition: left .3s ease;
+    -ms-transition: left .3s ease;
+    transition: left .3s ease;
+  }
+}
+.navbar-inverse {
+	min-height: 48px;
+	margin-bottom: 0px;
+	border-radius: 0px;
+	border-bottom: 1px solid #191e23;
+	background: #2c3742; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2c3742 0%, #28303a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c3742), color-stop(100%,#28303a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2c3742 0%,#28303a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2c3742 0%,#28303a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2c3742 0%,#28303a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2c3742 0%,#28303a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3742', endColorstr='#28303a',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+
+
+
+/*************************************************
+****                表单验证样式                ****
+/**************************************************/
+.ng-valid[required], 
+.ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
 }
