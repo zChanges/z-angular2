@@ -50,7 +50,11 @@ module.exports = {
         { test: /\.eot$/,  loader: "file-loader" },
         { test: /\.svg$/,  loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
         
-        { test:/favicon.ico$/, loader: 'file-loader?name=[name].[ext]' }
+        { test:/favicon.ico$/, loader: 'file-loader?name=[name].[ext]' },
+
+        { test: /\.scss$/, exclude: [helpers.root('src', 'app')], loader: ExtractTextPlugin.extract({fallbackLoader:'style-loader',loader:'css-loader!sass-loader'})},
+        { test: /\.scss$/, include: [helpers.root('src', 'app')], loader:'to-string-loader!css-loader!sass-loader'}
+
       ]
     },
 

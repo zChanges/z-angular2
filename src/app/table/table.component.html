@@ -1,0 +1,38 @@
+ <!--*** ag-grid-ng2 **
+    rowHeight                  --设置行高
+    rowSelection               --选中行
+    enableColResize            --随意调整列宽
+    enableSorting              --自带排序
+    enableFilter               --列表添加过滤
+    suppressRowClickSelection  --废弃点击选中
+    toolPanelSuppressGroups    --工具面板废弃组
+    toolPanelSuppressValues    --工具面板废弃输入
+    rowModelType="pagination"
+    paginationPageSize="15"
+-->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Table
+    </div>
+    <div class="table-responsive">
+        <!--<ag-grid-ng2 #agGrid style="width: 100%; height: 350px;" class="ag-fresh"
+            [gridOptions]="gridOptions"
+            [columnDefs]="columnDefs"
+        >
+        </ag-grid-ng2>-->
+        <ag-grid-ng2 #agGrid style="width: 100%; height: 350px;" class="ag-fresh"
+            [gridOptions]="gridOptions"
+            [columnDefs]="columnDefs"
+            [rowData]="rowData"
+            rowSelection="multiple"
+            enableColResize
+            rowModelType="pagination"
+            paginationPageSize="5"
+        >
+        </ag-grid-ng2>
+    </div>
+    <button (click)="resizeFn()">列表自适应</button>
+    <button (click)="agGrid.api.selectAll()">全选</button>
+    <button (click)="agGrid.api.deselectAll()">取消选中</button>
+
+</div>

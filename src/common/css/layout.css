@@ -248,9 +248,18 @@ body.menu #sidebar-nav {
 	background: linear-gradient(to bottom,  #2c3742 0%,#28303a 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3742', endColorstr='#28303a',GradientType=0 ); /* IE6-9 */
 }
-
-
-
+.panel-heading {
+    background-color: #f6f8f8;
+}
+.panel-default{
+  border-color: #dee5e7;
+}
+.font-bold {
+    font-weight: 700;
+}
+.m-b-sm {
+    margin-bottom: 10px;
+}
 
 
 

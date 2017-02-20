@@ -8,10 +8,12 @@ import { formService } from './from.Service';
 })
 export class fromComponent implements OnInit {
     userTypeList = [];
+    userDetailList = [];
     myForm;
     from = {
-        userName:"",
-        passWord:'',
+        userName:"zChange",
+        passWord:'541226',
+        phone:'15162996236',
         userType:'5'
     };
     constructor(private formService:formService) { 
@@ -22,7 +24,8 @@ export class fromComponent implements OnInit {
     }
     
     submitFrom():void{
-        console.log(this.myForm)
+        this.userDetailList.push(this.from)
+        console.log(this.userDetailList)
     }
     
 }
