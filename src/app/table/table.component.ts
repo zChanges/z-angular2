@@ -44,7 +44,7 @@ export class tableComponent implements OnInit {
                 if(params.value=='超级用户'){ return {color: 'red'};}else{ return null;};
             }},
             {headerName: "手机号码",field: "userPhone"},
-            {headerName: "编辑",
+            {headerName: "编辑",suppressSorting:true,
                 cellRenderer:(params)=>{
                      return '<button (click)="resizeFn(params)" [binding]="params">编辑</button>';
                 }

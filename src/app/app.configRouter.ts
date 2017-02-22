@@ -2,7 +2,9 @@ import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { fromComponent }        from './from/from.component';
-import { tableComponent }   from './table/table.component';
+import { tableComponent }       from './table/table.component';
+import { GoodsTypeComponent }   from './goodsType/goodsType.component';
+
 
 const routes:Routes = [
     {
@@ -17,6 +19,10 @@ const routes:Routes = [
   {
     path: 'table',
     component: tableComponent
+  },
+  {
+    path: 'goodsType',
+    component: GoodsTypeComponent
   }
 
 ]
