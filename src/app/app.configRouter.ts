@@ -4,13 +4,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { fromComponent }        from './from/from.component';
 import { tableComponent }       from './table/table.component';
 import { GoodsTypeComponent }   from './goodsType/goodsType.component';
+import { LoginComponent }       from './login/login.component';
+
 
 
 const routes:Routes = [
-    {
+  {
     path: '',
     redirectTo: 'index',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'from',
@@ -23,6 +29,10 @@ const routes:Routes = [
   {
     path: 'goodsType',
     component: GoodsTypeComponent
+  },
+  {
+    path:'login',
+    component:LoginComponent
   }
 
 ]
