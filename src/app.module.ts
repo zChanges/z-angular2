@@ -17,7 +17,7 @@ import { configInterceptor }          from './config.Interceptor';
 //Component
 import { fromComponent }              from './app/from/from.component';
 import { tableComponent }             from './app/table/table.component';
-import { GoodsTypeComponent }         from './app/goodsType/goodsType.component';
+// import { GoodsTypeComponent }         from './app/goodsType/goodsType.component';
 import { LoginComponent }             from './app/login/login.component';
 
 
@@ -27,6 +27,9 @@ import { formService }                from './app/from/from.Service';
 import { tableService }               from './app/table/table.Service';
 import { GoodsTypeService }           from './app/goodsType/goodsTypeService';
 import { loginService }               from './app/login/login.Service';
+
+
+
 
 
 
@@ -48,7 +51,6 @@ import { loginService }               from './app/login/login.Service';
       AppComponent,
       fromComponent,
       tableComponent,
-      GoodsTypeComponent,
       LoginComponent
   ],
   //供应商

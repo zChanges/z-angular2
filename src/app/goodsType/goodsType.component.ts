@@ -1,7 +1,7 @@
 import { Http } from '@angular/http';
 
 import { GoodsTypeService } from './goodsTypeService';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 @Component({
   selector: 'app-goodsType',
   templateUrl: './goodsType.component.html'
