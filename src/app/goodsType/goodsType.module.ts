@@ -13,6 +13,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
   ],
-  declarations: [GoodsTypeComponent]
+  declarations: [GoodsTypeComponent
+]
 })
 export class goodsTypeModule { }

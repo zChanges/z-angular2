@@ -6,13 +6,10 @@ import { tableComponent }       from './table/table.component';
 import { LoginComponent }       from './login/login.component';
 
 
-
-
-
 const routes:Routes = [
   {
     path: '',
-    redirectTo: 'index',
+    redirectTo: 'article',
     pathMatch: 'full'
   },
   {
@@ -30,6 +27,11 @@ const routes:Routes = [
   {
     path: 'goodsType',
     loadChildren: './goodsType/goodsType.module#goodsTypeModule'
+  },
+  //文章列表
+  {
+    path: 'article',
+    loadChildren:'./article/article.module#articleModule'
   }
 
 ]

@@ -36,4 +36,6 @@ export class GoodsTypeComponent implements OnInit {
           console.log(res)
       });
   }
+
+
 }

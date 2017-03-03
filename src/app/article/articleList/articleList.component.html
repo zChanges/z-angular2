@@ -1,0 +1,32 @@
+<aside class="article" *ngFor="let item of articleList">
+    <header>
+        <h2 class="cursor article-title"><p (click)="articleDetail(item.id)">{{item.title}}</p></h2>
+        <div class="article-meta">
+            <div class="article-time cursor">
+                <i class="fa fa-calendar"></i>{{item.time}}
+            </div>
+            <div class="article-time cursor">
+                <i class="fa fa-tag"></i>{{item.category}}
+            </div>
+        </div>
+    </header>
+
+    <div class="article-entry">
+        <p>{{item.content}}</p>
+        <div class="article-more">
+            <a>Read More</a>
+        </div>
+    </div>
+
+    <footer class="article-footer">
+      <a class="article-Share-link article-link">Share</a>
+      <a class="article-comment-link article-link">Comment</a>
+    </footer>
+</aside>
+
+<div class="page-nav">
+  <a class="page-prev">« Prev</a>
+  <span class="page-number">1</span>
+  <a class="page-number">2</a>
+  <a class="page-prev">Next »</a>
+</div>

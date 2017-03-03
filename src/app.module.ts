@@ -20,19 +20,12 @@ import { tableComponent }             from './app/table/table.component';
 // import { GoodsTypeComponent }         from './app/goodsType/goodsType.component';
 import { LoginComponent }             from './app/login/login.component';
 
-
 //Service
 import { RouteService }               from './app/routeService';
 import { formService }                from './app/from/from.Service';
 import { tableService }               from './app/table/table.Service';
 import { GoodsTypeService }           from './app/goodsType/goodsTypeService';
 import { loginService }               from './app/login/login.Service';
-
-
-
-
-
-
 
 
 
@@ -63,12 +56,12 @@ import { loginService }               from './app/login/login.Service';
       provideInterceptorService([
         configInterceptor
       ]),
-
       loginService
   ],
   //模块引导时应该引导的组件
   bootstrap:    [ AppComponent ]
 })
+
 // hmr config
 export class AppModule {
     constructor(public appRef: ApplicationRef) { }
