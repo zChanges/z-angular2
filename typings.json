@@ -7,6 +7,7 @@
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160726204056",
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
     "jquery": "registry:dt/jquery#1.10.0+20170123093700",
+    "mustache": "registry:dt/mustache#0.8.2+20160510002910",
     "node": "registry:dt/node#7.0.0+20170204020307"
   }
 }

@@ -3,14 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { fromComponent }        from './from/from.component';
 import { tableComponent }       from './table/table.component';
-import { GoodsTypeComponent }   from './goodsType/goodsType.component';
+import { LoginComponent }       from './login/login.component';
+import { FeedbackComponent }    from './feedback/feedback.component';
+
 
 
 const routes:Routes = [
-    {
+  {
     path: '',
-    redirectTo: 'index',
+    redirectTo: 'article',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'from',
@@ -22,7 +28,16 @@ const routes:Routes = [
   },
   {
     path: 'goodsType',
-    component: GoodsTypeComponent
+    loadChildren: './goodsType/goodsType.module#goodsTypeModule'
+  },
+  //文章列表
+  {
+    path: 'article',
+    loadChildren:'./article/article.module#articleModule'
+  },
+  {
+    path:'feedback',
+    component:FeedbackComponent
   }
 
 ]

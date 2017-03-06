@@ -23,6 +23,13 @@ export class tableComponent implements OnInit {
             suppressRowClickSelection: true,  //--禁用选中行
             onRowSelected:this.onRowSelected,//选中行的数据
         };
+        // this.gridOptions = <GridOptions>{
+        //     suppressSorting:true,//禁用排序
+        //     columnDefs:  this.createColumnDefs(),//初始化列表
+        //     datasource: this.dataSource,//获取数据
+        //     // onSelectionChanged: this.onSelectionChanged,  //选中后的所有数据
+        //     suppressRowClickSelection: true,  //--禁用选中行
+        // };
      }
     
     resizeFn(){

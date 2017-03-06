@@ -1,17 +1,44 @@
 <!-- navbar -->
-<header class="navbar navbar-inverse" role="banner">
-    <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" id="menu-toggler">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <span class="navbar-brand">zChange-Angular2</span>
+<header id="header" class="navbar" role="banner">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="navbar-brand">zChange-Angular2</a>
+            <nav class="h-nav">
+                <a>Home</a>
+                <a routerLink='/article' routerLinkActive="active">Articles</a>
+                <a routerLink='/feedback' routerLinkActive="active">Feedback</a>
+            </nav>
+        </div>
     </div>
 </header>
-<!-- end navbar -->
-    <!-- sidebar -->
+<!-- navbar end -->
+
+
+<div id="main" class="outer">
+
+    <div id="profile" class="b-solid">
+        111111111
+    </div>
+    <div>
+        <div id="Mcontent">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    <div id="sidebar" class="b-solid">
+        222222
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="footer-outer">
+        111111
+    </div>
+</footer>
+
+
+
+<!--<div class="outer">
     <div id="sidebar-nav">
         <ul id="dashboard-menu">
             <li>
@@ -29,7 +56,6 @@
                 <div id="zFrom" data-toggle="collapse" data-target="#zFromChlid" role="tab" >
                     <span class="panel-title">
                         分组
-                        <!--<span class="glyphicon glyphicon-chevron-up right"></span>-->
                     </span>
                 </div>
                 <div id="zFromChlid" class="panel-collapse collapse " role="tabpanel" aria-labelledby="zFrom">
@@ -45,7 +71,6 @@
                 <div id="goodInfo" data-toggle="collapse" data-target="#goodInfoChlid" role="tab" >
                     <span class="panel-title">
                         货物
-                        <!--<span class="glyphicon glyphicon-chevron-up right"></span>-->
                     </span>
                 </div>
                 <div id="goodInfoChlid" class="panel-collapse collapse " role="tabpanel" aria-labelledby="zFrom">
@@ -57,13 +82,12 @@
                 </a>
             </li>
         </ul>
-        
     </div>
     <div class="content">
-        <!--标记一个位置，用于加载当前激活路由的组件-->
         <router-outlet></router-outlet>
-        <!-- end sidebar -->
     </div>
+</div>-->
+
 
 
 
