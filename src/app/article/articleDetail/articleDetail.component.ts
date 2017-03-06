@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
 import { ArticleService } from './../articleList/article.service';
+import { flyIn } from './../../../common/fly-in';
+
+
 
 
 
@@ -11,13 +14,14 @@ import { ArticleService } from './../articleList/article.service';
   styleUrls: [
     './articleDetail.component.css',
     './../articleList/articleList.component.css'
-  ]
+  ],
+  animations:[flyIn]
 })
 export class ArticleDetailComponent implements OnInit {
   article:any = "";
   params:any
   constructor(private activatedRoute:ActivatedRoute,private articleService:ArticleService) { 
-
+  
   }
 
   ngOnInit() {

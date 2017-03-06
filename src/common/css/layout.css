@@ -416,6 +416,10 @@ a{
 .cursor{
   cursor: pointer;
 }
+#main{
+    margin-top: 40px 0px;
+    height: 100%;
+}
 .outer {
   max-width: 1320px;
   margin: 0 auto;
@@ -446,14 +450,12 @@ a{
   width: 21.53846153846154%;
   margin: 0 0.769230769230769%;
 }
-#main{
-    margin-top: 40px 0px;
-      
-}
+
 #sidebar {
   float: left;
   width: 21.53846153846154%;
   margin: 0 0.769230769230769%;
+  height: 800px;
 }
 #Mcontent{
     float: left;

@@ -6,7 +6,7 @@
             <nav class="h-nav">
                 <a>Home</a>
                 <a routerLink='/article' routerLinkActive="active">Articles</a>
-                <a>Home</a>
+                <a routerLink='/feedback' routerLinkActive="active">Feedback</a>
             </nav>
         </div>
     </div>
@@ -15,12 +15,16 @@
 
 
 <div id="main" class="outer">
+
     <div id="profile" class="b-solid">
         111111111
     </div>
-    <div id="Mcontent">
-        <router-outlet></router-outlet>
+    <div>
+        <div id="Mcontent">
+            <router-outlet></router-outlet>
+        </div>
     </div>
+    
     <div id="sidebar" class="b-solid">
         222222
     </div>

@@ -1,4 +1,4 @@
-<aside class="article" *ngFor="let item of articleList">
+<aside class="article" *ngFor="let item of articleList" [@flyIn]>
     <header>
         <h2 class="cursor article-title"><p (click)="articleDetail(item.id)">{{item.title}}</p></h2>
         <div class="article-meta">
@@ -25,8 +25,9 @@
 </aside>
 
 <div class="page-nav">
-  <a class="page-prev">« Prev</a>
-  <span class="page-number">1</span>
-  <a class="page-number">2</a>
-  <a class="page-prev">Next »</a>
+  <a class="page-prev" *ngIf="page>1" (click)="prevFn(page)">« Prev</a>
+  <a class="page-number" *ngIf="page==total" (click)="checkedPage(page-1)">{{page-1}}</a>
+  <span class="page-number">{{page}}</span>
+  <a class="page-number" *ngIf="page!=total" (click)="checkedPage(page+1)">{{page+1}}</a>
+  <a class="page-prev" *ngIf="!page==total || page<total" (click)="nextFn(page)">Next »</a>
 </div>

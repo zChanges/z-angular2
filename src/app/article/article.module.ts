@@ -22,7 +22,7 @@ import { ArticleService } from './articleList/article.service';
   declarations: [
     ArticleListComponent,
     ArticleDetailComponent
-],
+  ],
   providers: [
     ArticleService
   ]

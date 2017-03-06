@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { fromComponent }        from './from/from.component';
 import { tableComponent }       from './table/table.component';
 import { LoginComponent }       from './login/login.component';
+import { FeedbackComponent }    from './feedback/feedback.component';
+
 
 
 const routes:Routes = [
@@ -32,6 +34,10 @@ const routes:Routes = [
   {
     path: 'article',
     loadChildren:'./article/article.module#articleModule'
+  },
+  {
+    path:'feedback',
+    component:FeedbackComponent
   }
 
 ]
