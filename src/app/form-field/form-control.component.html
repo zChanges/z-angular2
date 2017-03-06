@@ -1,0 +1,9 @@
+<div [formGroup]="form">
+    <label class="col-sm-2 control-label">{{field.label}}</label>
+    <div class="col-sm-10">
+        <div [ngSwitch]="field.controlType">
+            <input *ngSwitchCase="'textbox'" class="form-control" value="{{field.value}}" [formControlName]="field.key" [type]="field.type"
+                placeholder="{{field.placeholder}}" />
+        </div>
+    </div>
+</div>

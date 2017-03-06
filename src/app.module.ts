@@ -22,6 +22,7 @@ import { tableComponent }             from './app/table/table.component';
 // import { GoodsTypeComponent }         from './app/goodsType/goodsType.component';
 import { LoginComponent }             from './app/login/login.component';
 import { FeedbackComponent }          from './app/feedback/feedback.component';
+import { FormControlComponent }       from './app/form-field/form-control.component';
 
 
 //Service
@@ -30,6 +31,8 @@ import { formService }                from './app/from/from.Service';
 import { tableService }               from './app/table/table.Service';
 import { GoodsTypeService }           from './app/goodsType/goodsTypeService';
 import { loginService }               from './app/login/login.Service';
+import { formControlService }         from './app/form-field/form-control.service';
+
 
 
 
@@ -50,7 +53,8 @@ import { loginService }               from './app/login/login.Service';
       fromComponent,
       tableComponent,
       LoginComponent,
-      FeedbackComponent
+      FeedbackComponent,
+      FormControlComponent
   ],
   //供应商
   providers: [ 
@@ -62,7 +66,8 @@ import { loginService }               from './app/login/login.Service';
       provideInterceptorService([
         configInterceptor
       ]),
-      loginService
+      loginService,
+      formControlService
   ],
   //模块引导时应该引导的组件
   bootstrap:    [ AppComponent ]
