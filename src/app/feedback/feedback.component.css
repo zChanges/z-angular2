@@ -1,0 +1,12 @@
+.feed-container{
+  background: #fff;
+}
+.feed-title{
+  font-size: 2em;
+  color: #565a5f;
+  text-decoration: none;
+  line-height: 1.3em;
+}
+.feed-form{
+    padding:10px 0px;
+}

@@ -1,12 +1,14 @@
-<div class="user-profile-container" [@flyIn]>
-    <form class="form-horizontal" role="form" [formGroup]="form">
+<div class="feed-container" [@flyIn]>
+    <h2 class="feed-title padd20">问题反馈</h2>
+    <form class="form-horizontal feed-form" role="form" [formGroup]="form">
         <div *ngFor="let field of fields" class="form-group">
             <form-control [form]="form" [field]="field"></form-control>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <button type="button" class="btn btn-success">保存</button>
+            <div class="col-md-offset-1 col-md-10">
+                <button md-raised-button class="pull-right" type="button" (click)="submit()" [disabled]="!form.valid" >提交</button>
             </div>
         </div>
     </form>
+     <button md-raised-button>Click me!</button>
 </div>

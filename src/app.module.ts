@@ -12,8 +12,9 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 //第三方插件
 import {AgGridModule}                 from 'ag-grid-ng2/main';
 //--ajax拦截器
-import { provideInterceptorService } from 'ng2-interceptors';
+import { provideInterceptorService }  from 'ng2-interceptors';
 import { configInterceptor }          from './config.Interceptor';
+import { MaterialModule }             from '@angular/material';
 
 
 //Component
@@ -42,10 +43,12 @@ import { formControlService }         from './app/form-field/form-control.servic
       AppRouterModule,
       FormsModule,
       ReactiveFormsModule,
+      MaterialModule,
       HttpModule,
       AgGridModule.withComponents([
         tableComponent
       ])
+      
   ],
   //当前模块的组件、指令和管道
   declarations: [ 

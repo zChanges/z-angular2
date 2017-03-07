@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.4.4",
+    "@angular/material": "^2.0.0-beta.2",
     "@angularclass/hmr": "^1.2.2",
     "@angularclass/hmr-loader": "^3.0.2",
     "@ngtools/webpack": "^1.2.4",

@@ -1,3 +1,11 @@
+/**
+ * 定义一个对象模型来描述所有表单中所需要的参数
+ * controlType---输入框类型
+ * label      ---标题
+ * 
+ * 
+ * 在此在派生多个新类，来特定一些输入框的种类（如文本、邮件、下拉）
+ */
 export class formBase<T>{
   value: T;
   key: string;

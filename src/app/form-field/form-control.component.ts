@@ -10,9 +10,11 @@ import { FormGroup } from '@angular/forms';
 export class FormControlComponent{
     @Input() field: formBase<any>;
     @Input() form: FormGroup;
+    // get isValid() { 
+    //     return this.form.controls[this.field.key].valid; 
+    // }
 
     constructor() {
-
      }
 
 }
