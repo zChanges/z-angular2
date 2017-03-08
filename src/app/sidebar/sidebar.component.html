@@ -1,0 +1,13 @@
+<div class="col-md-12 form-group">
+    <input type="text" class="form-control"  placeholder="搜索">
+</div>
+<div class="col-md-12 sidebar-classify">
+    <h1>分类<i class="fa fa-tag m-l-5"></i></h1>
+    <ul class="sidebar-tag">
+        <app-tag *ngFor="let tag of tagData" #tags (searchArticle)="searchArticle($event)" [tag]='tag'></app-tag>
+    </ul>
+    <!--如果无法通过绑定子组件事件来传递参数可用本地一个本地变量来传递子组件的所有属性和方法
+        <app-tag #tags></app-tag>
+        <button (click)="tags.chlidFn()"></button>
+    -->
+</div>

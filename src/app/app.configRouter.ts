@@ -35,9 +35,15 @@ const routes:Routes = [
     path: 'article',
     loadChildren:'./article/article.module#articleModule'
   },
+  //问题反馈
   {
     path:'feedback',
     component:FeedbackComponent
+  },
+  //标签
+  {
+    path:'tag',
+    loadChildren:'./tag/tag.module#tagModule'
   }
 
 ]

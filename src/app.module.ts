@@ -26,6 +26,12 @@ import { FeedbackComponent }          from './app/feedback/feedback.component';
 import { FormControlComponent }       from './app/form-field/form-control.component';
 
 
+import { SidebarComponent }           from './app/sidebar/sidebar.component';
+import { TagComponent }               from './app/tag/tag.component/tag.component';
+
+
+
+
 //Service
 import { RouteService }               from './app/routeService';
 import { formService }                from './app/from/from.Service';
@@ -33,6 +39,8 @@ import { tableService }               from './app/table/table.Service';
 import { GoodsTypeService }           from './app/goodsType/goodsTypeService';
 import { loginService }               from './app/login/login.Service';
 import { formControlService }         from './app/form-field/form-control.service';
+import { tagService }                 from './app/tag/tag.service';
+
 
 
 
@@ -57,7 +65,9 @@ import { formControlService }         from './app/form-field/form-control.servic
       tableComponent,
       LoginComponent,
       FeedbackComponent,
-      FormControlComponent
+      FormControlComponent,
+      SidebarComponent,
+      TagComponent
   ],
   //供应商
   providers: [ 
@@ -70,7 +80,8 @@ import { formControlService }         from './app/form-field/form-control.servic
         configInterceptor
       ]),
       loginService,
-      formControlService
+      formControlService,
+      tagService
   ],
   //模块引导时应该引导的组件
   bootstrap:    [ AppComponent ]
