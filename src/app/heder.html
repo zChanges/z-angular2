@@ -2,7 +2,7 @@
 <header id="header" class="navbar" role="banner">
     <div class="navbar-inner">
         <div class="container">
-            <a class="navbar-brand">zChange-Angular2</a>
+            <a class="navbar-brand">z-angular2</a>
             <nav class="h-nav">
                 <a>Home</a>
                 <a routerLink='/article' routerLinkActive="active">Articles</a>
@@ -15,9 +15,26 @@
 
 
 <div id="main" class="outer">
-
     <div id="profile" class="b-solid">
-        111111111
+       <div class="base-info">
+           <div class="center head-portrait">
+               <img src=""/>
+           </div>
+           <h1 class="h3 center">zChange</h1>
+           <div class="description center"><p>Nothing want to say</p></div>
+           <div class="base-record">
+                <div class="record">10<p>Articles</p></div>
+                <div class="record">8<p>Tags</p></div>
+           </div>
+           <div class="base-links">
+               <ul>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="github"><i class="fa fa-github"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="weibo"><i class="fa fa-weibo"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="QQ"><i class="fa fa-qq"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="weixin"><i class="fa fa-weixin"></i></a></li>
+               </ul>
+           </div>
+       </div>
     </div>
     <div>
         <div id="Mcontent">
@@ -26,20 +43,13 @@
     </div>
     
     <div id="sidebar" class="pa-tb-40">
-        <!--<div class="col-md-12 form-group">
-            <input type="text" class="form-control"  placeholder="搜索">
-        </div>
-        <div class="col-md-12 sidebar-classify">
-            <h1>分类<i class="fa fa-tag m-l-5"></i></h1>
-            <app-tag></app-tag>
-        </div>-->
         <app-sidebar></app-sidebar>
     </div>
 </div>
 
 <footer id="footer">
     <div class="footer-outer">
-        111111
+        <p>© 2017 zChange </p>
     </div>
 </footer>
 

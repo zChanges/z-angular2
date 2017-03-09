@@ -12,7 +12,7 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 //第三方插件
 import {AgGridModule}                 from 'ag-grid-ng2/main';
 //--ajax拦截器
-import { provideInterceptorService }  from 'ng2-interceptors';
+// import { provideInterceptorService }  from 'ng2-interceptors';
 import { configInterceptor }          from './config.Interceptor';
 import { MaterialModule }             from '@angular/material';
 
@@ -41,6 +41,10 @@ import { loginService }               from './app/login/login.Service';
 import { formControlService }         from './app/form-field/form-control.service';
 import { tagService }                 from './app/tag/tag.service';
 
+//pipe
+import { SharpPipe }                  from './app/utils/sharp.pipe';
+
+
 
 
 
@@ -67,7 +71,8 @@ import { tagService }                 from './app/tag/tag.service';
       FeedbackComponent,
       FormControlComponent,
       SidebarComponent,
-      TagComponent
+      TagComponent,
+      SharpPipe
   ],
   //供应商
   providers: [ 
@@ -76,9 +81,9 @@ import { tagService }                 from './app/tag/tag.service';
       tableService,
       GoodsTypeService,
       configInterceptor,
-      provideInterceptorService([
-        configInterceptor
-      ]),
+    //   provideInterceptorService([
+    //     configInterceptor
+    //   ]),
       loginService,
       formControlService,
       tagService
