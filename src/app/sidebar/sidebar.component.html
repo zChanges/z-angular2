@@ -1,5 +1,5 @@
 <div class="col-md-12 form-group">
-    <input type="text" class="form-control"  placeholder="搜索">
+    <input (keyup)="searchChange(search)" type="text" [(ngModel)]="search" class="form-control"  placeholder="搜索">
 </div>
 <div class="col-md-12 sidebar-classify">
     <h1>分类<i class="fa fa-tag m-l-5"></i></h1>

@@ -14,6 +14,3 @@ import '@angular/router';
 
 // RxJS 
 import 'rxjs/Rx';
-import 'rxjs/add/operator/toPromise';
-
-
