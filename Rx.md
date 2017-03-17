@@ -132,7 +132,7 @@ var observable = Rx.Observable.create(function subscribe(observer) {
 });
 ```
 
-#### Observer( 观察者 )
+### Observer( 观察者 )
     ：什么是观察者？观察者其实是数据的消费者，把来自Observble的数据拿过来使用。同时，Observer的本质是一系列的回调函数，是来自于Observable传递数据后的回调函数。我们可以直接通过subscribe函数创建观察者
 ```
 var subscription = observable.subscribe(
@@ -143,7 +143,7 @@ var subscription = observable.subscribe(
 subscription.unsubscribe();销毁observer
 ```
 
-#### Subscription( 订阅 )
+### Subscription( 订阅 )
     ：什么是Subscription？它其实是代表着Observable的'执行'的对象，我们可以通过它的 unsubscribe 方法销毁Observable的执行。同时我们能使用 add 方法，一次销毁多个
 ```
 var subscription = observable1.subscribe(x => console.log('first: ' + x));
@@ -154,7 +154,7 @@ setTimeout(() => {
 }, 1000);
 ```
 
-#### Subject（主题）
+### Subject（主题）
 ```
 什么是Subject？它是在Rx中一种比较特殊的Observable( 同时它也是Observer )，它能够让值( value )同时向多个Observer传播( 广播 )。而一般的Observable都是' 单播 '形式，即：每一个订阅了同一个Observable的observer，实际上是拥有不同的、独立的Observable的执行( 原文：each subscribed Observer owns an independent execution of the Observable )，而Subject是多播的。
 在subject和observable对比，subject在多播下对observable进行了优化，subject只执行了一次
@@ -177,6 +177,166 @@ source.subscribe({next: (v) => console.log('observerA: ' + v)});
 source.subscribe({next: (v) => console.log('observerB: ' + v)});
 //1 2 1 2
 ```
+#### multicast
+`multicast方法返回一个类似于Observable的可观察对象，但是在其被订阅后，它会表现Subject的特性。 multicast 返回的对象同时是ConnectableObservable类型的，拥有connect() 方法的Observable`
+
+##### ——connect()
+```bash
+  var source = Rx.Observable.from([1, 2, 3]);
+  var subject = new Rx.Subject();
+  var multicasted = source.multicast(subject);
+  # 通过`subject.subscribe({...})`订阅Subject的Observer：
+  multicasted.subscribe({
+    next: (v) => console.log('observerA: ' + v)
+  });
+  multicasted.subscribe({
+    next: (v) => console.log('observerB: ' + v)
+  });
+  # 让Subject从数据源订阅开始生效：
+  multicasted.connect();
+```
+##### ——refCount()
+`refCount使得多播可观察对象在其第一个观察者开始订阅时自动的开始执行，在其最后一个订阅者取消的时候终止执行`
+ ```bash
+    #refCount()开始订阅时自动开始执行，不需要通过connect()开始。在unsubscribe取消订阅的时候也会终止执行。
+    var source = Observable.interval(500);
+    var subject = new Subject();
+    var refCounted = source.multicast(subject).refCount();
+    var subscription1, subscription2, subscriptionConnect;
+    
+    console.log('observerA subscribed');
+    subscription1 = refCounted.subscribe({
+      next: (v) => console.log('observerA: ' + v)
+    });
+    
+    console.log('observerB subscribed');
+    subscription2 = refCounted.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+    
+    setTimeout(() => {
+      console.log('observerA unsubscribed');
+      subscription1.unsubscribe();
+    }, 1200);
+    
+    setTimeout(() => {
+      console.log('observerB unsubscribed');
+      subscription2.unsubscribe();
+    }, 2000);
+
+    # observerA: 0
+    # observerB: 0
+    # observerA: 1
+    # observerA: 1
+    # observerA unsubscribed
+    # observerB: 2
+    # observerB: 3
+    # observerB unsubscribed
+ ```
+### BehaviorSubject
+`Subjects的一个变体是BehaviorSubject,其有"当前值"的概念。它储存着要发射给消费者的最新的值 当一个Observer订阅后，它会即刻从BehaviorSubject收到“最新的值”。`
+```bash
+    var subject = new BehaviorSubject(5);//初始值
+    subject.subscribe({
+      next: (v) => console.log('observerA: ' + v)
+    });
+    subject.next(1);
+    subject.next(2);
+    subject.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+    subject.next(3);
+    # observerA 5
+    # observerA 1
+    # observerA 2
+    # observerB 2
+    # observerA 3
+    # observerB 3
+````
+### ReplaySubject
+`ReplaySubject 如同于BehaviorSubject是 Subject 的子类。通过 ReplaySubject可以向新的订阅者推送旧数值，就像一个录像机ReplaySubject可以记录Observable的一部分状态（过去时间内推送的值）`
+`一个ReplaySubject可以记录Observable执行过程中推送的多个值，并向新的订阅者回放它们。`
+```bash
+   var subject = new ReplaySubject(3);
+    subject.subscribe({
+      next: (v) => console.log('observerA: ' + v)
+    });
+    
+    subject.next(1);
+    subject.next(2);
+    subject.next(3);
+    subject.next(4);
+    
+    subject.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+    subject.next(5);
+    ## 回放3个从最后一个网上数3个就是4,3,2
+    # observerA 1
+    # observerA 2
+    # observerA 3
+    # observerA 4
+    # observerB 2
+    # observerB 3
+    # observerB 4
+    # observerA 5
+    # observerB 5
+```
+也可以通过时间来回放
+```bash
+  var subject = new Rx.ReplaySubject(100, 500 /* windowTime */);
+
+  subject.subscribe({
+    next: (v) => console.log('observerA: ' + v)
+  });
+
+  var i = 1;
+  setInterval(() => subject.next(i++), 200);
+
+  setTimeout(() => {
+    subject.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+  }, 1000);
+  #缓存100个,但是参数仅仅500ms
+  #observerA: 1
+  #observerA: 2
+  #observerA: 3
+  #observerA: 4
+  #observerA: 5
+  #observerB: 3
+  #observerB: 4
+  #observerB: 5
+  #observerA: 6
+  #observerB: 6
+```
+### AsyncSubject
+`AsyncSubject是另一个变体，它只发送给观察者可观察对象执行的最新值，并且仅在执行结束时。Observable仅会在执行完成后，推送执行环境中的最后一个值。`
+`AsyncSubject 与 last() 操作符相似，等待完成通知后推送执行过程的最后一个值。`
+```bash
+  var subject = new AsyncSubject();
+    subject.subscribe({
+      next: (v) => console.log('observerA: ' + v)
+    });
+    
+    subject.next(1);
+    subject.next(2);
+    subject.next(3);
+    subject.next(4);
+    
+    subject.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+    
+    subject.next(5);
+    subject.complete();
+    # observerA 5
+    # observerB 5
+```
+
+
+
+
 
 # transform
 ## buffer 
