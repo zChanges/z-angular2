@@ -38,6 +38,9 @@ h1 small, h2 small, h3 small, h4 small, h5 small {
 .m-l-5{
   margin-left:5px 
 }
+.inlineB{
+ display: inline-block
+}
 
 
 /*body.menu {
@@ -554,6 +557,7 @@ li{
 .head-portrait{
   height: 106px;
 }
+
 
 .base-record{
   display: inline-block;

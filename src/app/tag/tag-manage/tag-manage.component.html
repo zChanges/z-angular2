@@ -1,0 +1,17 @@
+<div>
+  <h3 class="h3">标签</h3>
+  <div class="tag wall">
+      <form class="form-group" #tagForm="ngForm">
+        <div class="col-lg-5">
+          <input name="tagName"  class="form-control" [(ngModel)]="tagName" type="text" required/>
+        </div>
+        <button  [disabled]="!tagForm.valid" type="submit" class="btn btn-default" (click)="addTages()">添加</button>
+      </form>
+
+      <div class="tagInfo">
+        <ul class="tagInfo inlineB" *ngFor="let item of tagsList">
+          <li (click)="delTag(item.value)">{{item.text}}</li>
+        </ul>
+      </div>
+  </div>
+</div>

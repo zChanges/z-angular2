@@ -55,10 +55,8 @@ npm start
         可以通过@ViewChild(子组件)吧子组件注入进来，并挂上AfterViewInit生命周期钩子
     4.通过Service来实现组件的通讯，通过asObservable服务订阅，在ngOnDestroy()后在销毁的时候退订 unsubscribe();
 ```
-- [ ] 标签详情
- ```
-   实现增删改，以便编写文章指定固定分类。
-```
+- [x] 标签详情
+
 - [x] 问题反馈 ---- `app/feedback/feedback.component`
 ```
     --- app/form-field
@@ -76,7 +74,7 @@ npm start
 
 - [ ] 全局功能模块  
 ```
-    1：加headers头（√）
+    1：加headers头
     2：判断后台success错误转入reject统一处理错误信息
     3：处理后台数据，更改格式。
 ```

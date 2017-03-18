@@ -4,7 +4,9 @@ import {MdSnackBar} from '@angular/material';
 
 import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
-
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { AsyncSubject }  from 'rxjs/AsyncSubject';
 
 
 
@@ -25,39 +27,11 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.tagData = this.tagService.getTag();
-
     this.searchSub
       .debounceTime(200)
       .subscribe(res=>{
         console.log(res)
       });
-
-      // var source = Observable.create((observer)=>{
-      //     console.log(`source was called`);
-      //     observer.next(1);
-      //     observer.next(2);
-      // });
-      // source.subscribe((v) => console.log('observerA: ' + v));
-      // source.subscribe((v) => console.log('observerB: ' + v));
-
-  
-
-      var source = Observable.create((o)=>{
-          console.log(`source was called`);
-          o.next(1);
-          o.next(2);
-      });
-      var subject = new Subject();
-      var multicasted = source.multicast(subject).refCount();
-
-      multicasted.subscribe((v) => console.log('observerA: ' + v));
-      multicasted.subscribe((v) => console.log('observerB: ' + v));
-      multicasted.connect();
-      
-      // 1 1 2 2
-
-
-
 
   }
 

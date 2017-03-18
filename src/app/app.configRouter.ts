@@ -40,11 +40,11 @@ const routes:Routes = [
     path:'feedback',
     component:FeedbackComponent
   },
-  //标签
-  // {
-  //   path:'tag',
-  //   loadChildren:'./tag/tag.module#tagModule'
-  // }
+  // 标签
+  {
+    path:'tagManage',
+    loadChildren:'./tag/tag.module#tagModule'
+  }
 
 ]
 
