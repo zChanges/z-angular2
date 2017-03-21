@@ -5,9 +5,6 @@ import { ArticleService } from './../articleList/article.service';
 import { flyIn } from './../../../common/fly-in';
 
 
-
-
-
 @Component({
   selector: 'app-articleDetail',
   templateUrl: './articleDetail.component.html',
@@ -27,7 +24,9 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit() {
       this.activatedRoute.params.subscribe(params=>{
         this.params = params;
-        this.article = this.articleService.getArticleDetail(this.params.id)
+        this.params = this.params.arg;
+        console.log(JSON.parse(this.params))
+        this.article = this.articleService.getArticleDetail(this.params)
       })
   }
 

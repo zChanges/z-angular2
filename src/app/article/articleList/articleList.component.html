@@ -1,27 +1,32 @@
-<aside class="article" *ngFor="let item of articleList" [@flyIn]>
-    <header>
-        <h2 class="cursor article-title"><p (click)="articleDetail(item.id)">{{item.title}}</p></h2>
-        <div class="article-meta">
-            <div class="article-time cursor">
-                <i class="fa fa-calendar"></i>{{item.time}}
-            </div>
-            <div class="article-time cursor">
-                <i class="fa fa-tag"></i>{{item.category}}
-            </div>
-        </div>
-    </header>
-
-    <div class="article-entry">
-        <p>{{item.content}}</p>
-        <div class="article-more">
-            <a (click)="articleDetail(item.id)">Read More</a>
-        </div>
+<aside *ngFor="let item of articleList" [@flyIn]>
+    <div class="article-inner inlineB">
+        <img src="{{item.img}}">
     </div>
+    <div class="article">
+        <header>
+            <h2 class="cursor article-title"><p (click)="articleDetail(item)">{{item.title}}</p></h2>
+            <div class="article-meta">
+                <div class="article-time cursor">
+                    <i class="fa fa-calendar"></i>{{item.time}}
+                </div>
+                <div class="article-time cursor">
+                    <i class="fa fa-tag"></i>{{item.category}}
+                </div>
+            </div>
+        </header>
 
-    <footer class="article-footer">
-      <a class="article-Share-link article-link">Share</a>
-      <a class="article-comment-link article-link">Comment</a>
-    </footer>
+        <div class="article-entry">
+            <p>{{item.content}}</p>
+            <div class="article-more">
+                <a (click)="articleDetail(item)">Read More</a>
+            </div>
+        </div>
+
+        <footer class="article-footer">
+        <a class="article-Share-link article-link">Share</a>
+        <a class="article-comment-link article-link">Comment</a>
+        </footer>
+    </div>
 </aside>
 
 <div class="page-nav">

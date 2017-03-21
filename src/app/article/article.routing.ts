@@ -5,17 +5,12 @@ import { ArticleDetailComponent } from './articleDetail/articleDetail.component'
 
 
 export const articleRoutes: Routes = [
-  {
-    path: '',
-    redirectTo: 'articleList',
-    pathMatch: 'full'
-  },
   { 
-    path: 'articleList', 
+    path: '',
     component: ArticleListComponent 
   },
   {
-    path: 'articleDetail/:id', 
+    path: 'articleDetail/:arg', 
     component: ArticleDetailComponent 
   }
 ];

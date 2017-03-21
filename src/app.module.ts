@@ -1,4 +1,3 @@
-
 //路由
 import { AppRouterModule }            from './app/app.configRouter';
 import { HttpModule, RequestOptions } from '@angular/http';
@@ -14,21 +13,11 @@ import {AgGridModule}                 from 'ag-grid-ng2/main';
 //--ajax拦截器
 // import { provideInterceptorService }  from 'ng2-interceptors';
 import { configInterceptor }          from './config.Interceptor';
-import { MaterialModule }             from '@angular/material';
+
 
 
 //Component
-import { fromComponent }              from './app/from/from.component';
-import { tableComponent }             from './app/table/table.component';
-// import { GoodsTypeComponent }         from './app/goodsType/goodsType.component';
 import { LoginComponent }             from './app/login/login.component';
-import { FeedbackComponent }          from './app/feedback/feedback.component';
-import { FormControlComponent }       from './app/form-field/form-control.component';
-
-
-import { SidebarComponent }           from './app/sidebar/sidebar.component';
-import { TagComponent }               from './app/tag/tag.component/tag.component';
-
 
 
 
@@ -41,13 +30,6 @@ import { loginService }               from './app/login/login.Service';
 import { formControlService }         from './app/form-field/form-control.service';
 import { tagService }                 from './app/tag/tag.service';
 
-//pipe
-import { SharpPipe }                  from './app/utils/sharp.pipe';
-
-
-
-
-
 
 @NgModule({
   imports: [ 
@@ -55,24 +37,12 @@ import { SharpPipe }                  from './app/utils/sharp.pipe';
       AppRouterModule,
       FormsModule,
       ReactiveFormsModule,
-      MaterialModule,
-      HttpModule,
-      AgGridModule.withComponents([
-        tableComponent
-      ])
-      
+      HttpModule
   ],
   //当前模块的组件、指令和管道
   declarations: [ 
       AppComponent,
-      fromComponent,
-      tableComponent,
-      LoginComponent,
-      FeedbackComponent,
-      FormControlComponent,
-      SidebarComponent,
-      TagComponent,
-      SharpPipe
+      LoginComponent
   ],
   //供应商
   providers: [ 

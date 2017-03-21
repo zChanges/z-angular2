@@ -30,8 +30,14 @@ export class ArticleListComponent implements OnInit {
   }
 
   //跳转详情页
-  articleDetail(id):void{
-    this.router.navigateByUrl("article/articleDetail/" + id);
+  articleDetail(arg):void{
+    console.log(arg)
+    this.router.navigateByUrl("app/article/articleDetail/"+JSON.stringify({
+      category:arg.category,
+      id:arg.id,
+      title:arg.title
+    }));
+    
   }
 
 

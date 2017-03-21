@@ -18,7 +18,7 @@ export class TagManageComponent implements OnInit {
 
   addTages(){
     this.tagsList.push({value:this.tagsList.length+1,text:this.tagName});
-    console.log(this.tagsList)
+    this.tagName = "";
   }
   
   delTag(val){

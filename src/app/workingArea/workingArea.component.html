@@ -1,0 +1,65 @@
+<!-- navbar -->
+<header id="header" class="navbar" role="banner">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="navbar-brand">z-Angular2</a>
+            <nav class="h-nav">
+                <a>Home</a>
+                <a routerLink='/app/article' routerLinkActive="active">Articles</a>
+                <a routerLink='/app/feedback' routerLinkActive="active">Feedback</a>
+                <a routerLink='/app/tagManage' routerLinkActive="active">Tags</a>
+            </nav>
+            <a routerLink='/login' routerLinkActive="active">登陆</a>
+        </div>
+    </div>
+</header>
+<!-- navbar end -->
+
+
+<div id="main" class="outer">
+    <div id="profile" class="b-solid">
+       <div class="base-info">
+           <div class="center head-portrait">
+               <img src="../../common/img/logo.png"/>
+           </div>
+           <h1 class="h3 center">zChange</h1>
+           <div class="description center"><p>Nothing want to say</p></div>
+           <div class="base-record">
+                <div class="record">10<p>Articles</p></div>
+                <div class="record">8<p>Tags</p></div>
+           </div>
+           <div class="base-links">
+               <ul>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="github"><i class="fa fa-github"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="weibo"><i class="fa fa-weibo"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="QQ"><i class="fa fa-qq"></i></a></li>
+                   <li><a href="https://github.com/zChanges" target="_blank" mdTooltip="weixin"><i class="fa fa-weixin"></i></a></li>
+               </ul>
+           </div>
+       </div>
+    </div>
+    <div>
+        <div id="Mcontent">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    <div id="sidebar" class="pa-tb-40">
+        <app-sidebar></app-sidebar>
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="footer-outer">
+        <p>© 2017 zChange </p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+    

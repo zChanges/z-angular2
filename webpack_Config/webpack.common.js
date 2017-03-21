@@ -39,7 +39,12 @@ module.exports = {
             isProd?['@ngtools/webpack']:['@angularclass/hmr-loader','angular2-template-loader','awesome-typescript-loader','angular2-router-loader']
         },
         { test:/\.html$/, loader:'html-loader' },
-        { test:/\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot)$/, loader:'image-webpack-loader' },
+        { test:/\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot)$/,exclude:[helpers.root('src','common')], loader:'image-webpack-loader' },
+        {
+            test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot)$/,
+            include:[helpers.root('src','common')],
+            loader: 'file-loader?name=common/img/[name].[ext]!image-webpack-loader'
+        },
         //ExtractTextPlugin 抽离css
         //??fallbackLoader和loader的区别
         { test:/\.css$/, exclude:[helpers.root('src','app')], loaders:ExtractTextPlugin.extract({fallbackLoader:'style-loader',loader:'css-loader'})},
