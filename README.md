@@ -30,7 +30,7 @@ npm start
 
 ## 功能
 
-- [ ] 登录 ----`app/login`
+- [x] 登录 ----`app/login`
 ```
 待开发……
 ```
